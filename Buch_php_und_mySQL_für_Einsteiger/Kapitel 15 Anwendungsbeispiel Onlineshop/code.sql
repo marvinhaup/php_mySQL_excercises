@@ -40,3 +40,18 @@ VALUES ('Anmeldeseite unseres online-shops',
 -- Erste Zeile der Tabelle os_inhalt abfragen
 
 SELECT * FROM os_inhalt WHERE i_id = 1;
+
+-- Tabelle os_kunden erzeugen
+
+CREATE TABLE os_kunden (
+    k_id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    k_nachname VARCHAR(50),
+    k_vorname VARCHAR(50),
+    k_straße VARCHAR(50),
+    k_postleitzahl INTEGER UNSIGNED,
+    k_ort VARCHAR(50),
+    k_email VARCHAR (50),
+    k_telefonnummer INTEGER UNSIGNED,
+    k_passwort VARCHAR(50),
+    k_kundennummer INTEGER UNSIGNED UNIQUE
+);

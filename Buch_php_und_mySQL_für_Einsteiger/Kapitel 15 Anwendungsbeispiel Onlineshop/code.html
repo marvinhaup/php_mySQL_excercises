@@ -43,3 +43,21 @@
         </tr>
     </table>
 </form>
+
+
+<!--
+    Bestätigungs-Formular in ausgabe.php
+-->
+
+<form action="besteatigung.php" method="POST">
+    <input type="submit" value="Klicken zum Bestätigen">
+</form>
+
+<!--
+    Korrektur-Formular in ausgabe.php
+-->
+
+<form action="index.php" method="POST">
+    <input type="hidden" name="Kunden-Referenz" value=$neuerkunde.getKundennummer()>
+    <input type="submit" value="Korrigieren">
+</form>

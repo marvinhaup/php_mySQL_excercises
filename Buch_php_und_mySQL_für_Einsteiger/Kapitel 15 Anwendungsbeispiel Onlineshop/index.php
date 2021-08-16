@@ -11,6 +11,14 @@
         $dbh = new PDO("mysql:dbname=onlineshopDB; host=localhost", "admin", "passwort");
         // Wenn Verbindung erfolgreich, Meldung ausgeben
         print "Verbindung erfolgreich hergestellt.";
+        
+        // Überprüfen, ob eine Referenz auf einen zu löschenden Kunden besteht
+        if (isset($_POST["Kunden-Referenz"]))
+        {
+            $sql2 = "DELETE FROM os_kunden WHERE k_kundennummer =".$_POST['Kunden-Referenz'].";";
+            $dbh->query($sql2);
+        }
+
         // Rückgabe der Datenbank zu dem SQL-Befehl in Variable speichern
         $rueckgabe = $dbh->query($sql);
         // konvertieren des Rückgabewertes(PDO-Statement) zu einem assoziativen Array
